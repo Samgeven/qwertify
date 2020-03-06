@@ -1,3 +1,12 @@
+function valueToKey(obj) {
+    obj = Object.entries(obj);
+    for (let i = 0; i < obj.length; i++) {
+      obj[i].push(obj[i][0]);
+      obj[i].shift();
+    }
+    return Object.fromEntries(obj);
+}
+
 function convertKeyLayout(strInput, latin) {
   const letters = {
   q: "й",
@@ -40,25 +49,33 @@ function convertKeyLayout(strInput, latin) {
   "<": "Б",
   "?": ",",
   "/": "."
-  
 }
 
 function isUpperCase(str) {
  return str === str.toUpperCase() ? true : false 
 }
 
-console.log(isUpperCase(";"))
+const lettersReverse = valueToKey(letters);
 
 strInput = strInput.split(" ");
 for (var j = 0; j < strInput.length; j++) {
   strInput[j] = strInput[j].split("");
   for (var i = 0; i < strInput[j].length; i++) {
-    if (!isUpperCase(strInput[j][i]) || /\;|\>|\<|\,|\'/.test(strInput[j][i])) {
-      console.log("props: " + Object.getOwnPropertyNames(letters)[strInput[j][i]])
-      latin ? strInput[j][i] = letters[strInput[j][i]] : strInput[j][i] = letters[strInput[j][i]]
+    if (!isUpperCase(strInput[j][i]) || /\{|\[|\}|\]|\:|\;|\"|\'|\<|\,|\<|\>|\.|\/|\?/.test(strInput[j][i])) {
+      if (latin) {
+        strInput[j][i] = letters[strInput[j][i]]
+      }
+      else {
+        strInput[j][i] = lettersReverse[strInput[j][i]]
+      }
     }
     else {
-      strInput[j][i] = letters[strInput[j][i].toLowerCase()]
+      if (latin) {
+        strInput[j][i] = letters[strInput[j][i].toLowerCase()]
+      }
+      else {
+        strInput[j][i] = lettersReverse[strInput[j][i].toLowerCase()]
+      }
       strInput[j][i] = strInput[j][i].toUpperCase()
     }
   }
@@ -80,15 +97,12 @@ function getSel() {
     console.log("выделенный текст - " + selection)
 
     function isLatin(str) {
-        /[a-z]/.test(str)
-    } 
+      return /\w/g.test(str)
+    }
 
     var newText = convertKeyLayout(selection, isLatin(selection));
-
     console.log("новый текст - " + newText);   
-
     return txtarea.value = txtarea.value.substring(0, strStart) + newText + txtarea.value.substring(strEnd, txtarea.value.length)
-
 }
 
 document.addEventListener("keyup", function() {
