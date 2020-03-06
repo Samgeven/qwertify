@@ -88,6 +88,7 @@ return strInput
 
 function getSel() {
     // элемент в фокусе
+    
     var txtarea = document.activeElement
     // индексы начала и конца выделенного текста
     var strStart = txtarea.selectionStart;
@@ -95,15 +96,15 @@ function getSel() {
     
     var selection = txtarea.value.substring(strStart, strEnd);
     console.log("выделенный текст - " + selection)
-
+    
     function isLatin(str) {
       return /\w/g.test(str)
     }
-
+    
     var newText = convertKeyLayout(selection, isLatin(selection));
     console.log("новый текст - " + newText);   
     return txtarea.value = txtarea.value.substring(0, strStart) + newText + txtarea.value.substring(strEnd, txtarea.value.length)
-}
+  }
 
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
