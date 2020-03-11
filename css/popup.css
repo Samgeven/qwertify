@@ -1,0 +1,59 @@
+.popup {
+    width: 240px;
+    height: auto;
+}
+
+.popup_wrp {
+    display: flex;
+    padding: 0px;
+}
+
+.popup__item {
+    display: block;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 50%;
+    padding: 20px 6px 0px;
+    margin: 0px 8px 8px;
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.popup__item:first-child {
+    position: relative;
+}
+
+.popup__item:first-child .popup__qwerty {
+    position: absolute;
+    left: 40px;
+    top: 32px;
+}
+
+.popup__item:hover {
+    box-shadow: 0px 0px 6px 0px #2A225A;
+    transition: 0.2s;
+}
+
+.popup__title {
+    padding-left: 8px;
+    font-style: italic;
+    color: #2A225A;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.popup__title::first-letter {
+    font-family: "Sonsie One", cursive;
+    color: #65B362;
+    padding-right: 3px;
+}
+
+.rotate-js {
+    transform: rotate(180deg);
+}

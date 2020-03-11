@@ -91,8 +91,15 @@ function getSel() {
 
 // CTRL + Q
 
+var arrow = document.getElementsById('arrow')
+
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
-        getSel()
+        getSel();
+        document.getElementsByClassName('popup__arrows').classList.add('rotate-js')
     }
+})
+
+arrow.addEventListener("click", function() {
+  this.classList.add('rotate-js')
 })
