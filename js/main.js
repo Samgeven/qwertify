@@ -91,15 +91,24 @@ function getSel() {
 
 // CTRL + Q
 
-var arrow = document.getElementsById('arrow')
+/*
+var arrow = document.getElementById('arrow')
+*/
 
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
         getSel();
-        document.getElementsByClassName('popup__arrows').classList.add('rotate-js')
+        /*document.getElementsByClassName('popup__arrows').classList.add('rotate-js')*/
     }
 })
 
+
+/*
 arrow.addEventListener("click", function() {
   this.classList.add('rotate-js')
+})
+*/
+
+chrome.runtime.onMessage.addListener(function(request) {
+  getSel();
 })
