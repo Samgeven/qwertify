@@ -56,4 +56,5 @@
 
 .rotate-js {
     transform: rotate(180deg);
+    transition: 0.4s;
 }

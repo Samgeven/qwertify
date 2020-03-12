@@ -91,9 +91,6 @@ function getSel() {
 
 // CTRL + Q
 
-/*
-var arrow = document.getElementById('arrow')
-*/
 
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
@@ -109,6 +106,9 @@ arrow.addEventListener("click", function() {
 })
 */
 
+// По клику на иконку
+
 chrome.runtime.onMessage.addListener(function(request) {
   getSel();
+  console.log(request)
 })
