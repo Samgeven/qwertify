@@ -95,16 +95,8 @@ function getSel() {
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
         getSel();
-        /*document.getElementsByClassName('popup__arrows').classList.add('rotate-js')*/
     }
 })
-
-
-/*
-arrow.addEventListener("click", function() {
-  this.classList.add('rotate-js')
-})
-*/
 
 // По клику на иконку
 

@@ -1,6 +1,7 @@
 .popup {
     width: 240px;
     height: auto;
+    min-height: 170px;
 }
 
 .popup_wrp {
@@ -57,4 +58,19 @@
 .rotate-js {
     transform: rotate(180deg);
     transition: 0.4s;
+}
+
+.opened-js {
+    min-height: 250px;
+    transition: 0.2s;
+}
+
+.opened-js .popup__textarea {
+    height: 30px;
+}
+
+.popup__textarea {
+    margin: 8px;
+    width: 218px;
+    height: 0;
 }

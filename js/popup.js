@@ -7,4 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         document.getElementById('popupArrows').classList.add('rotate-js')
     };
+    document.getElementById('copyButton').addEventListener('click', function() {
+        document.getElementById('popup').classList.toggle('opened-js')
+    });
 }, false)
