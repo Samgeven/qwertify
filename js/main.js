@@ -58,8 +58,7 @@ function isLatin(str) {
 // Поиск выделенного текста в DOM
 
 function getSel() {
-    var txtarea
-    
+    var txtarea;
 
     if (window.getSelection().baseNode.nodeName == "#text") {
       var txtareaNode = window.getSelection().anchorNode.parentElement
