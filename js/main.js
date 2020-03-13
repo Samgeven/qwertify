@@ -50,15 +50,16 @@ strInput = strInput.join(" ")
 return strInput
 }
 
+// Проверка раскладки
+function isLatin(str) {
+  return /\w/g.test(str)
+}
+
 // Поиск выделенного текста в DOM
 
 function getSel() {
     var txtarea
     
-    // Проверка раскладки
-    function isLatin(str) {
-      return /\w/g.test(str)
-    }
 
     if (window.getSelection().baseNode.nodeName == "#text") {
       var txtareaNode = window.getSelection().anchorNode.parentElement
@@ -91,7 +92,6 @@ function getSel() {
 
 // CTRL + Q
 
-
 document.addEventListener("keyup", function() {
     if (event.ctrlKey && event.keyCode === 81) {
         getSel();
@@ -101,6 +101,11 @@ document.addEventListener("keyup", function() {
 // По клику на иконку
 
 chrome.runtime.onMessage.addListener(function(request) {
-  getSel();
-  console.log(request)
+  if (request !== 'Выделенный текст изменен!') {
+    var newTextArea = convertKeyLayout(request, isLatin(request));
+    chrome.runtime.sendMessage(newTextArea);
+  }
+  else {
+    getSel();
+  }
 })

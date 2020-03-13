@@ -3,7 +3,17 @@ document.addEventListener("DOMContentLoaded", function () {
     function onclick () {
         chrome.tabs.query({currentWindow: true, active: true},
         function (tabs) {
-            chrome.tabs.sendMessage(tabs[0].id, 'Выделенный текст изменен!')
+            if (!document.getElementById('mainTextarea').value) {
+                chrome.tabs.sendMessage(tabs[0].id, 'Выделенный текст изменен!')
+            }
+            else {
+                chrome.tabs.sendMessage(tabs[0].id, document.getElementById('mainTextarea').value);
+                chrome.runtime.onMessage.addListener(
+                    function(request) {
+                        document.getElementById('mainTextarea').value = request
+                    }
+                )
+            }
         });
         document.getElementById('popupArrows').classList.add('rotate-js')
     };

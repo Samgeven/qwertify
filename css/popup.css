@@ -62,15 +62,27 @@
 
 .opened-js {
     min-height: 250px;
-    transition: 0.2s;
 }
 
-.opened-js .popup__textarea {
+.opened-js .popup_textarea-wrp {
     height: 30px;
 }
 
-.popup__textarea {
+.opened-js .popup__textarea {
+    overflow: visible;
+    height: 40px;
+    transition: 0.2s;
+    display: block;
+}
+
+.popup_textarea-wrp {
     margin: 8px;
     width: 218px;
-    height: 0;
+}
+
+.popup__textarea {
+    width: 218px;
+    max-width: 218px;
+    max-height: 40px;
+    display: none;
 }
