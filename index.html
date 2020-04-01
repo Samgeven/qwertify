@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Главная</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Main">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" type="text/css" href="css/gh-pages.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Sonsie+One&display=swap" rel="stylesheet">
+ </head>
+ <body>
+     <header class="header">
+         <div class="header_wrp container">
+            <div class="header_logo-wrp text-center">
+                <img class="header__logo" src="img/qwertify.svg">
+            </div>
+            <p class="header__note text-center mt-2">
+                Простой способ сменить раскладку текста
+            </p>
+         </div>
+    </header>
+    <section class="main container mt-64 mt-sm-32">
+        <p class="main__note">
+            <span class="font-weight-bold">Qwertify</span> - расширение для браузера google chrome, которое позволяет легко менять раскладку выделенного текста на qwerty-клавиатурах. Расширение автоматически определяет язык выделенного текста и инвертирует его: 
+        </p>
+        <div class="main-demo">
+            <div class="text-wrp mt-sm-20">
+                <span class="text-sample" id="splitText"></span>
+            </div>
+        </div>
+        <p class="main__note mt-5 mt-sm-32">
+            Расширение можно использовать несколькими способами:
+        </p>
+        <ul class="main-list mt-32">
+            <li class="main-list__item">
+                Нажатие комбинации клавиш CTRL+Q - мгновенно меняет раскладку выделенной области текста 
+            </li>
+            <li class="main-list__item mt-4 mt-sm-16">
+                Нажатие кнопки “Преобразовать текст” на панели расширения, после выделения нужного фрагмента текста
+            </li>
+            <li class="main-list__item mt-4 mt-sm-16">
+                Вставка текста в специальное поле. Для этого нужно скопировать текст, нажать кнопку “Вставить текст из буфера” на панели расширения и вставить текст в появившееся поле. Далее нужно нажать кнопку “Преобразовать текст”, как в предыдущем пункте.
+            </li>
+        </ul>
+        <p class="main__note mt-80 mt-sm-48">
+            По всем вопросам можно обращаться на почту sam.geven@mail.ru. Буду рад услышать любые предложения, а также сообщения об ошибках.
+        </p>
+    </section>
+    <footer class="footer mt-64 mt-sm-32">
+        <div class="footer_wrp container d-flex justify-content-between">
+            <div class="footer-contacts">
+                <a class="footer-contacts__link github" href="#"></a>
+                <a class="footer-contacts__link codepen" href="#"></a>
+                <a class="footer-contacts__link mail" href="#"></a>
+            </div>
+            <p class="footer__author">
+                sam.geven
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/TextPlugin.min.js"></script>
+    <script src="js/gh-pages.js"></script>
+</body>

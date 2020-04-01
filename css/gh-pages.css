@@ -1,0 +1,196 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+::selection {
+    background: #65B362;
+    color: white;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* Отступы */
+.mt-32 {margin-top: 32px;}
+.mt-64 {margin-top: 64px;}
+.mt-80 {margin-top: 80px;}
+
+/* Хэдер */
+
+.header {
+    height: 180px;
+    background: url(../img/header.jpg) 50% no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.header_logo-wrp {
+    padding-top: 38px;
+}
+
+.header__note {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* Демо с анимацией */
+
+.main-demo {
+    background-color: #2A225A;
+    height: 160px;
+    max-width: 572px;
+    margin: 0 auto;
+}
+
+.text-wrp {
+    margin: 40px auto;
+    padding-top: 60px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .text-sample {
+    font-size: 48px;
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    position: relative;
+    color: white;
+    z-index: 10000
+  }
+  
+  .text-qwerty {
+    color: #65B362;
+    padding-right: 3px;
+  }
+  
+  .bg-visor {
+    background-color: #65B362;
+    margin-right: auto;
+    font-size: 50px;
+    color: #65B362;
+    position: absolute;
+    top: 5px;
+  }
+  
+  .blink {
+    visibility: hidden;
+  }
+
+  /* Способы применения */
+
+  .main-list__item {
+      padding-left: 68px;
+      position: relative;
+  }
+  
+  .main-list__item:before {
+      position: absolute;
+      content: "1";
+      font-family: "Sonsie One";
+      font-size: 36px;
+      padding-top: 14px;
+      padding-left: 10px;
+      width: 44px;
+      height: 54px;
+      background-color: #65B362;
+      color: white;
+      left: 0px;
+      border-radius: 4px;
+  }
+
+  .main-list__item:nth-child(2)::before {
+      content: "2";
+      padding-left: 6px;
+    }
+
+  .main-list__item:nth-child(3)::before {
+      content: "3";
+      padding-left: 6px;
+    }
+
+/* Футер */
+
+.footer {
+    background-color: #F2F2F2;
+    height: 80px;
+}
+
+.footer_wrp {
+    padding-top: 24px;
+}
+
+.footer-contacts__link {
+    background: url(../img/gh.svg);
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    filter: opacity(0.5) grayscale(1);
+    transition: 0.2s;
+}
+
+.footer-contacts__link:hover {
+    transition: 0.2s;
+    filter: opacity(1) grayscale(0);
+}
+
+.footer-contacts__link + .footer-contacts__link {
+    margin-left: 16px;
+}
+
+.codepen {background: url(../img/cp.svg);}
+.footer-contacts__link.mail {
+    background: url(../img/mail.svg) no-repeat;
+    margin-left: 18px;
+}
+
+.footer__author {
+    font-size: 18px;
+    color: #909090;
+}
+
+@media (max-width: 767px) {
+
+    .mt-sm-16 {margin-top: 16px !important;}
+    .mt-sm-20 {margin-top: 20px !important;}
+    .mt-sm-32 {margin-top: 32px !important;}
+    .mt-sm-48 {margin-top: 48px !important;}
+    .mt-sm-64 {margin-top: 64px !important;}
+    
+    body {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .header {
+        height: 80px;
+        background: url(../img/header-mob.jpg) 50% no-repeat;
+    }
+
+    .header_logo-wrp {
+        padding-top: 14px;
+    }
+
+    .header__logo {
+        width: 165px;
+        height: 52px;
+    }
+
+    .header__note {
+        display: none;
+    }
+    
+    .footer-contacts {
+        margin: 0 auto;
+    }
+
+    .footer__author {
+        display: none;
+    }
+}
