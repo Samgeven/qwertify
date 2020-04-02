@@ -83,6 +83,20 @@ body {
     visibility: hidden;
   }
 
+  .visor {
+    font-size: 56px;
+    animation: 1s blink step-end infinite;
+  }
+  
+  @keyframes blink {
+    from, to {
+      color: transparent; 
+    }
+    50% {
+      color: white;
+    }
+  }
+
   /* Способы применения */
 
   .main-list__item {
