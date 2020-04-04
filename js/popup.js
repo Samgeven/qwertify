@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chrome.tabs.query({currentWindow: true, active: true},
         function (tabs) {
 
-            // Пользователь запускает скрипт в контексте открытой страницы, если поле в попапе пустое  
+            // Пользователь запускает скрипт в контексте открытой вкладки, если поле в попапе пустое  
             if (!document.getElementById('mainTextarea').value) {
                 chrome.tabs.sendMessage(tabs[0].id, 'Выделенный текст изменен!')
             }
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         popupArrows.classList.add('rotate-js');
         setTimeout (function() {
             popupArrows.classList.remove('rotate-js');
-        }, 1000);
+        }, 700);
     };
     document.getElementById('copyButton').addEventListener('click', function() {
         document.getElementById('popup').classList.toggle('opened-js');
